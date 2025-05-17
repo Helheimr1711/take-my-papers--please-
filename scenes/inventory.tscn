@@ -40,7 +40,7 @@ layout_mode = 2
 [node name="Header" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Header"]
+[node name="Spawn_Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Header"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -52,3 +52,5 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 8
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Header/Spawn_Button" to="." method="_on_spawn_button_pressed"]
