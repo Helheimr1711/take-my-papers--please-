@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var camera_rig = $CameraRig
+@onready var inventory = $Inventory
 
 ## Basic variables for movement exported to easily change in  inspector
 # Speed variable in meters per second
@@ -9,6 +10,18 @@ extends CharacterBody3D
 ## Other variables
 # Target velocity
 var target_velocity = Vector3.ZERO
+var inventory_input_show = false
+
+func _process(delta):
+	if Input.is_action_just_pressed("show_inventory"):
+		if inventory_input_show == false:
+			inventory.show()
+			inventory_input_show = true
+			print(inventory_input_show)
+		else:
+			inventory.hide()
+			inventory_input_show = false
+			print(inventory_input_show)
 
 
 ## Movement
