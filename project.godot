@@ -15,6 +15,14 @@ run/main_scene="uid://dwumqvdo2a5h"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Apeloot="*res://addons/apeloot/inventory/Apeloot.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/apeloot/plugin.cfg")
+
 [input]
 
 move_forward={
