@@ -13,6 +13,7 @@ func _ready():
 
 #Data
 enum Rarity {COMMON, UNCOMMON, RARE, EPIC, LEGENDARY}
+enum Item_Type {Weapon, Consumable, Contraband, Document, Valuable, Junk, Ammo}
 const ITEM_ICONS_PATH := "res://addons/apeloot/image/examples/"
 const INVENTORY_ITEM_SIZE := Vector2(56,56)
 const item_patterns = {
@@ -27,7 +28,7 @@ const item_patterns = {
 	],
 	"2x1": [
 		[0,0],
-		[1,1],
+		[1,1],	
 	],
 	"3x3": [
 		[1, 1, 1],
@@ -65,12 +66,13 @@ const rarities := {
 
 const items := {
 	"steak": {
-		"name": "Steak",
-		"desc": "Made from happy cows.",
+		"name": "Ammo-Pack",
+		"desc": "Basic pack of ammunation for all weapons.",
 		"price": 31,
 		"rarity": Rarity.COMMON,
-		"pattern": "3x1",
+		"pattern": "2x1",
 		"merge": true,
+		"type": Item_Type.Weapon,
 	},
 	"pickaxe": {
 		"name": "Pickaxe",
