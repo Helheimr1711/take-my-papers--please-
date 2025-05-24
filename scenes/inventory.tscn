@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccswcl8qrll58"]
+
+[ext_resource type="Texture2D" uid="uid://ch4cj1i2adao" path="res://ChatGPT Image May 20, 2025, 05_22_59 PM.png" id="1_ty45s"]
+[ext_resource type="Script" uid="uid://d32v82wwatuyb" path="res://addons/apeloot/inventory/grid_inventory/inventory_interface.gd" id="2_53g1v"]
+[ext_resource type="Texture2D" uid="uid://d2sucyi15vria" path="res://ChatGPT Image May 20, 2025, 05_29_57 PM.png" id="3_yyk2a"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="human" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -325.5
+offset_right = 217.5
+offset_bottom = 325.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ty45s")
+expand_mode = 1
+
+[node name="KapsaR" type="PanelContainer" parent="human"]
+layout_mode = 1
+offset_left = 94.5
+offset_top = 291.5
+offset_right = 134.5
+offset_bottom = 331.5
+script = ExtResource("2_53g1v")
+id = "kapsaR"
+slot_count = 4
+columns = 2
+full_size = true
+
+[node name="KapsaL" type="PanelContainer" parent="human"]
+layout_mode = 2
+offset_left = 260.5
+offset_top = 291.5
+offset_right = 300.5
+offset_bottom = 331.5
+script = ExtResource("2_53g1v")
+id = "kapsaL"
+slot_count = 4
+columns = 2
+full_size = true
+
+[node name="BotyR" type="PanelContainer" parent="human"]
+layout_mode = 2
+offset_left = 107.5
+offset_top = 537.5
+offset_right = 147.5
+offset_bottom = 577.5
+script = ExtResource("2_53g1v")
+id = "botaR"
+slot_count = 2
+columns = 2
+full_size = true
+
+[node name="BotyL" type="PanelContainer" parent="human"]
+layout_mode = 2
+offset_left = 233.5
+offset_top = 537.5
+offset_right = 273.5
+offset_bottom = 577.5
+script = ExtResource("2_53g1v")
+id = "botaL"
+slot_count = 2
+columns = 2
+full_size = true
+
+[node name="Backpack" type="TextureRect" parent="human"]
+layout_mode = 0
+offset_left = 436.5
+offset_top = 309.5
+offset_right = 780.5
+offset_bottom = 653.5
+texture = ExtResource("3_yyk2a")
+expand_mode = 1
+
+[node name="Backpack" type="PanelContainer" parent="human/Backpack"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 97.0
+offset_right = 131.0
+offset_bottom = 137.0
+script = ExtResource("2_53g1v")
+id = "batoh"
+slot_count = 16
+columns = 4
+full_size = true

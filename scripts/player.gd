@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var camera_rig = $CameraRig
+@onready var inventory_container = $Inventory
 
 ## Basic variables for movement exported to easily change in  inspector
 # Speed variable in meters per second
@@ -9,7 +10,11 @@ extends CharacterBody3D
 ## Other variables
 # Target velocity
 var target_velocity = Vector3.ZERO
+var inventory_input_pressed = false
 
+## Process
+func _process(delta: float) -> void:
+	show_inventory()
 
 ## Movement
 # Movement direction based on inputs
@@ -73,3 +78,16 @@ func _physics_process(delta):
 	# Finnaly character moving
 	velocity = target_velocity
 	move_and_slide()
+
+## Inventory Input
+func show_inventory():
+	if Input.is_action_just_pressed("Show Inventory"):
+		match inventory_input_pressed:
+			false:
+				inventory_container.show()
+				inventory_input_pressed = true
+				print(inventory_input_pressed)
+			true:
+				inventory_container.hide()
+				inventory_input_pressed = false
+				print(inventory_input_pressed)
