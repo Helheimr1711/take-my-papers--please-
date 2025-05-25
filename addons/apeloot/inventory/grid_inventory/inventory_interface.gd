@@ -25,9 +25,12 @@ var grid: GridContainer
 var items_node: Control
 var items = []  # keeps item references
 var item_states = []  # keeps items data, you can save this to save inventory, then load it with load_inventory()
+var dragging = false
 
 func _ready():
 	initialize_inventory()
+	Signals.dragStarted.connect(dragHandler)
+	Signals.dragEnded.connect(dragEndler)
 
 func load_inventory(data: Dictionary):
 	initialize_inventory(data.inventories[id])
@@ -375,3 +378,11 @@ func spawn_random_item():
 	item.parent_inventory = self
 	items_node.add_child(item)
 	return item
+
+func dragHandler():
+	dragging = true
+	print(dragging)
+
+func dragEndler():
+	dragging = false
+	print(dragging)

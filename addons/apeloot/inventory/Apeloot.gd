@@ -54,6 +54,10 @@ const item_patterns = {
 		[0,1,0],
 		[1,0,0],
 	],
+	"reverse_diagonal": [
+		[1,0],
+		[0,1],
+	]
 }
 
 const rarities := {
@@ -65,14 +69,14 @@ const rarities := {
 }
 
 const items := {
-	"steak": {
+	"ammo-pack": {
 		"name": "Ammo-Pack",
 		"desc": "Basic pack of ammunation for all weapons.",
 		"price": 31,
 		"rarity": Rarity.COMMON,
-		"pattern": "2x1",
+		"pattern": "1x1",
 		"merge": true,
-		"type": Item_Type.Weapon,
+		"type": Item_Type.Ammo,
 	},
 	"pickaxe": {
 		"name": "Pickaxe",

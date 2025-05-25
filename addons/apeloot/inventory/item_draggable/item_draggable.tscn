@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bl3ks8mvem0kc"]
 
-[ext_resource type="Script" path="res://addons/apeloot/inventory/item_draggable/item_draggable.gd" id="1_nywcv"]
-[ext_resource type="Texture2D" uid="uid://c2i8ut0fqyphs" path="res://addons/apeloot/image/examples/steak.png" id="2_2tsj4"]
-[ext_resource type="Script" path="res://addons/apeloot/inventory/item_draggable/item_texture.gd" id="2_lae0v"]
+[ext_resource type="Script" uid="uid://bdqro0grd58td" path="res://addons/apeloot/inventory/item_draggable/item_draggable.gd" id="1_nywcv"]
+[ext_resource type="Texture2D" uid="uid://bib4pln8muctv" path="res://addons/apeloot/image/examples/steak.png" id="2_2tsj4"]
+[ext_resource type="Script" uid="uid://ctfaidqjy4p8n" path="res://addons/apeloot/inventory/item_draggable/item_texture.gd" id="2_lae0v"]
 
 [sub_resource type="Curve" id="Curve_lpp7t"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -84,16 +84,16 @@ vertical_alignment = 1
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 64
-process_material = SubResource("ParticleProcessMaterial_2xma0")
 lifetime = 0.75
 one_shot = true
 explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2xma0")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 32
-process_material = SubResource("ParticleProcessMaterial_67fog")
 one_shot = true
 explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_67fog")
 
 [connection signal="itemUpgraded" from="." to="." method="_on_item_upgraded"]

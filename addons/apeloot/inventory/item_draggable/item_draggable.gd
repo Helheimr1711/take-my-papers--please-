@@ -61,6 +61,7 @@ func _ready():
 
 func start_drag():
 	dragStarted.emit(self)
+	Signals.dragStarted.emit()
 
 func set_stack_label(val):
 	if val > 1:
@@ -120,6 +121,7 @@ func _on_item_upgraded():
 
 func end_drag():
 	texture.end_drag()
+	Signals.dragEnded.emit()
 
 func try_move_to_inventory(inv: GridInventory) -> bool:
 	parent_inventory.deregister_item(self)
