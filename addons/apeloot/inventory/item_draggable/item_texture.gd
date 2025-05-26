@@ -67,6 +67,7 @@ func _input(event: InputEvent) -> void:
 
 func drag_item() -> Variant:
 	is_dragging = true
+	Signals.set_is_dragging_true()
 	item_node.original_orientation = item_node.orientation
 	original_position = item_node.position
 	create_drag_preview()
@@ -79,6 +80,7 @@ func drag_item() -> Variant:
 
 func drop_item():
 	is_dragging = false
+	Signals.set_is_dragging_false()
 	# Force drop if it wasn't triggered automatically
 	var drop_position = get_global_mouse_position()
 	var inventory = find_inventory_at_position(drop_position)
@@ -103,6 +105,7 @@ func update_rotation():
 
 func end_drag():
 	is_dragging = false
+	Signals.set_is_dragging_false()
 	if drag_preview:
 		drag_preview.queue_free()
 		drag_preview = null

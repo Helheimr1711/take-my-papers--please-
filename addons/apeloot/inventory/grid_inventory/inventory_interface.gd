@@ -25,12 +25,12 @@ var grid: GridContainer
 var items_node: Control
 var items = []  # keeps item references
 var item_states = []  # keeps items data, you can save this to save inventory, then load it with load_inventory()
-var dragging = false
+var dragged_item_ref = null
+var keybind_set = false
+
 
 func _ready():
 	initialize_inventory()
-	Signals.dragStarted.connect(dragHandler)
-	Signals.dragEnded.connect(dragEndler)
 
 func load_inventory(data: Dictionary):
 	initialize_inventory(data.inventories[id])
@@ -379,10 +379,12 @@ func spawn_random_item():
 	items_node.add_child(item)
 	return item
 
-func dragHandler():
-	dragging = true
-	print(dragging)
-
-func dragEndler():
-	dragging = false
-	print(dragging)
+func _process(delta: float) -> void:
+	if Signals.is_dragging and not keybind_set:
+		Signals.keybind_tooltip = "f"
+		keybind_set = true
+		print("Dragging started, tooltip set")
+	elif not Signals.is_dragging and keybind_set:
+		Signals.keybind_tooltip = ""
+		keybind_set = false
+		print("Dragging stopped, tooltip cleared")

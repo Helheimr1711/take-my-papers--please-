@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://sadjqmtinb1t"]
+[gd_scene load_steps=6 format=3 uid="uid://sadjqmtinb1t"]
 
 [ext_resource type="Script" uid="uid://1iuwcy1jnrno" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://ccswcl8qrll58" path="res://scenes/inventory.tscn" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://dx00mv5xf3rgw" path="res://scenes/ui_keys_help.tscn" id="3_qhqgy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3vyb7"]
 
@@ -23,6 +24,8 @@ shape = SubResource("CapsuleShape3D_u8vuu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
+
+[node name="UI_Keys_Help" parent="." instance=ExtResource("3_qhqgy")]
 
 [node name="Inventory" parent="." instance=ExtResource("2_g2els")]
 visible = false

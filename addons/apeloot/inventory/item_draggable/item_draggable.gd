@@ -61,7 +61,6 @@ func _ready():
 
 func start_drag():
 	dragStarted.emit(self)
-	Signals.dragStarted.emit()
 
 func set_stack_label(val):
 	if val > 1:

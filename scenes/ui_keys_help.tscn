@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx00mv5xf3rgw"]
+
+[ext_resource type="Script" uid="uid://ccqfdemqxqhpd" path="res://scripts/ui_keys_help.gd" id="1_m8kbk"]
+[ext_resource type="Script" uid="uid://55vvucmhltok" path="res://scripts/key_bind_texture.gd" id="2_ufbdf"]
+
+[node name="UI_Keys_Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8kbk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="key_bind_texture" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+script = ExtResource("2_ufbdf")
