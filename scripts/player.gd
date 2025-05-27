@@ -14,9 +14,9 @@ var inventory_input_pressed = false
 
 ## Process
 func _process(delta: float) -> void:
+	show_keybind_tooltip()
 	show_inventory()
-	if Signals.keybind_tooltip == "f" and Input.is_action_just_pressed("inspect"):
-		inspect_item()
+	inspect_item()
 
 ## Movement
 # Movement direction based on inputs
@@ -96,5 +96,17 @@ func show_inventory():
 
 ## Inspect Input
 func inspect_item():
-	print(Signals.dragged_item)
-	
+	if Signals.keybind_tooltip == "f" and Input.is_action_just_pressed("inspect") and Signals.inspect_ui_shown == false:
+		Signals.inspect_ui_shown = true
+		$"Inspect Scene".show()
+		Signals.inspecting = true
+	elif Signals.inspect_ui_shown == true and Input.is_action_just_pressed("inspect"):
+		Signals.inspect_ui_shown = false
+		$"Inspect Scene".hide()
+		Signals.inspecting = false
+
+func show_keybind_tooltip():
+	if Signals.keybind_tooltip == "":
+		$UI_Keys_Help.hide()
+	elif Signals.keybind_tooltip != "":
+		$UI_Keys_Help.show()

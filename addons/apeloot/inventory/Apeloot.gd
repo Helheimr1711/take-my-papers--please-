@@ -14,6 +14,8 @@ func _ready():
 #Data
 enum Rarity {COMMON, UNCOMMON, RARE, EPIC, LEGENDARY}
 enum Item_Type {Weapon, Consumable, Contraband, Document, Valuable, Junk, Ammo}
+enum Legality {Legal, Ilegal}
+enum Condition {New, Worn, Damaged, Broken, Fake, Expired}
 const ITEM_ICONS_PATH := "res://addons/apeloot/image/examples/"
 const INVENTORY_ITEM_SIZE := Vector2(56,56)
 const item_patterns = {
@@ -68,6 +70,30 @@ const rarities := {
 	Rarity.LEGENDARY: {"name": "Legendary", "color": Color.ORANGE_RED, "chance": 0.01},
 }
 
+const legalities := {
+	0: {"name": "Legal"},
+	1: {"name": "Ilegal"},
+}
+
+const typies := {
+	0: {"name": "Weapon"},
+	1: {"name": "Consumable"},
+	2: {"name": "Contraband"},
+	3: {"name": "Document"},
+	4: {"name": "Valuable"},
+	5: {"name": "Junk"},
+	6: {"name": "Ammunation"},
+}
+
+const conditionies := {
+	0: {"name": "New"},
+	1: {"name": "Worn"},
+	2: {"name": "Damaged"},
+	3: {"name": "Broken"},
+	4: {"name": "Fake"},
+	5: {"name": "Expired"},
+}
+
 const items := {
 	"ammo-pack": {
 		"name": "Ammo-Pack",
@@ -77,6 +103,10 @@ const items := {
 		"pattern": "1x1",
 		"merge": true,
 		"type": Item_Type.Ammo,
+		"weight": 0.2,
+		"condition": Condition.New,
+		"legality": Legality.Ilegal
+		
 	},
 	"pickaxe": {
 		"name": "Pickaxe",

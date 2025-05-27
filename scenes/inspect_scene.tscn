@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b8vuxm7hylbqc"]
+[gd_scene load_steps=2 format=3 uid="uid://b8vuxm7hylbqc"]
+
+[ext_resource type="Script" uid="uid://b1e0vwhxsq47m" path="res://scripts/inspect_script.gd" id="1_s6r1x"]
 
 [node name="Inspect Scene" type="Control"]
 layout_mode = 3
@@ -7,20 +9,99 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s6r1x")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(900, 600)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -544.0
+offset_top = -250.0
+offset_right = 544.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(900, 600)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextVboxLeft" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 600)
+layout_mode = 2
+
+[node name="name" type="Label" parent="MarginContainer/HBoxContainer/TextVboxLeft"]
+custom_minimum_size = Vector2(100, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "name"
+horizontal_alignment = 1
+autowrap_mode = 1
+uppercase = true
+
+[node name="type" type="Label" parent="MarginContainer/HBoxContainer/TextVboxLeft"]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Type"
+autowrap_mode = 3
+uppercase = true
+
+[node name="condition" type="Label" parent="MarginContainer/HBoxContainer/TextVboxLeft"]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "condition"
+autowrap_mode = 3
+uppercase = true
+
+[node name="legal" type="Label" parent="MarginContainer/HBoxContainer/TextVboxLeft"]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "legal"
+autowrap_mode = 3
+uppercase = true
+
+[node name="weight" type="Label" parent="MarginContainer/HBoxContainer/TextVboxLeft"]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Weight"
+autowrap_mode = 3
+
+[node name="value" type="Label" parent="MarginContainer/HBoxContainer/TextVboxLeft"]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "value"
+autowrap_mode = 3
+uppercase = true
+
+[node name="ItemImage" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+expand_mode = 1
+
+[node name="TextVboxRight" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 600)
+layout_mode = 2
+
+[node name="desc" type="Label" parent="MarginContainer/HBoxContainer/TextVboxRight"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Description"
+uppercase = true
+
+[node name="description" type="Label" parent="MarginContainer/HBoxContainer/TextVboxRight"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Description"
+autowrap_mode = 3
