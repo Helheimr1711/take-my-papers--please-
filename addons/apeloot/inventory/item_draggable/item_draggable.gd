@@ -61,6 +61,7 @@ func _ready():
 
 func start_drag():
 	dragStarted.emit(self)
+	get_item_id()
 
 func set_stack_label(val):
 	if val > 1:
@@ -145,3 +146,6 @@ func try_auto_stack(inv: GridInventory) -> bool:
 			i.stack_count += can_deposit
 			stack_count -= can_deposit
 	return false
+
+func get_item_id():
+		Signals.dragged_item = id

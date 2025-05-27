@@ -15,6 +15,8 @@ var inventory_input_pressed = false
 ## Process
 func _process(delta: float) -> void:
 	show_inventory()
+	if Signals.keybind_tooltip == "f" and Input.is_action_just_pressed("inspect"):
+		inspect_item()
 
 ## Movement
 # Movement direction based on inputs
@@ -91,3 +93,8 @@ func show_inventory():
 				inventory_container.hide()
 				inventory_input_pressed = false
 				print(inventory_input_pressed)
+
+## Inspect Input
+func inspect_item():
+	print(Signals.dragged_item)
+	

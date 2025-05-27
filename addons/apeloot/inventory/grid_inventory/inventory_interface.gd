@@ -383,8 +383,6 @@ func _process(delta: float) -> void:
 	if Signals.is_dragging and not keybind_set:
 		Signals.keybind_tooltip = "f"
 		keybind_set = true
-		print("Dragging started, tooltip set")
 	elif not Signals.is_dragging and keybind_set:
 		Signals.keybind_tooltip = ""
 		keybind_set = false
-		print("Dragging stopped, tooltip cleared")
